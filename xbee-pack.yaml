@@ -26,6 +26,7 @@ build:
         - perl Makefile.PL
         - make
         - make install DESTDIR={{ .xbee.out }}
+        - rm -rf {{ .xbee.out }}/usr/local/man
       directory: "{{ .xbee.src }}/XML-Parser-{{ .version }}"
 
 
