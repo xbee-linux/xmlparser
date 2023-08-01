@@ -1,0 +1,31 @@
+schema-version: 1.0
+
+type: builder
+
+description: |
+  The XML::Parser module is a Perl interface to James Clark's XML parser, Expat.
+  Installed module:
+  Expat.so
+
+  Expat: provides the Perl Expat interface
+
+var:
+  version: 2.46
+
+dependencies:
+  - expat
+
+provision:
+  - url:
+      from: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-{{ .version }}.tar.gz
+      todir: "{{ .xbee.src }}"
+
+build:
+  - shell:
+      cmds:
+        - perl Makefile.PL
+        - make
+        - make install DESTDIR={{ .xbee.out }}
+      directory: "{{ .xbee.src }}/XML-Parser-{{ .version }}"
+
+
