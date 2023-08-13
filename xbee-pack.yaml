@@ -12,7 +12,7 @@ description: |
 var:
   version: 2.46
 
-dependencies:
+builders:
   - expat
 
 provision:
