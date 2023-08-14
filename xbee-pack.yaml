@@ -16,9 +16,7 @@ builders:
   - expat
 
 provision:
-  - url:
-      from: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-{{ .version }}.tar.gz
-      todir: "{{ .xbee.src }}"
+  url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-{{ .version }}.tar.gz
 
 build:
   - shell:
