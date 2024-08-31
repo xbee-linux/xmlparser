@@ -10,13 +10,14 @@ description: |
   Expat: provides the Perl Expat interface
 
 var:
-  version: 2.46
+  xbee:
+    version: 2.46
 
 builders:
   - expat
 
 provision:
-  url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-{{ .version }}.tar.gz
+  url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-{{ .xbee.version }}.tar.gz
 
 build:
   - shell:
@@ -25,6 +26,6 @@ build:
         - make
         - make install DESTDIR={{ .xbee.out }}
         - rm -rf {{ .xbee.out }}/usr/local/man
-      directory: "{{ .xbee.src }}/XML-Parser-{{ .version }}"
+      directory: "{{ .xbee.src }}/XML-Parser-{{ .xbee.version }}"
 
 
