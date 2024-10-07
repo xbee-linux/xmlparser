@@ -1,7 +1,5 @@
 schema-version: 1.0
 
-type: builder
-
 description: |
   The XML::Parser module is a Perl interface to James Clark's XML parser, Expat.
   Installed module:
@@ -13,8 +11,7 @@ var:
   xbee:
     version: 2.46
 
-builders:
-  - expat
+builder: expat
 
 provision:
   url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-{{ .xbee.version }}.tar.gz
